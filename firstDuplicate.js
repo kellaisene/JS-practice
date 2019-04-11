@@ -29,3 +29,20 @@ function firstDuplicate(a) {
       else
           return -1;
 }
+
+
+// BETTER SOLUTION //
+function firstDuplicate(a) {
+  var dups = new Set();
+  
+  for (var e of a) {
+      let size = dups.size;
+      dups.add(e);
+      
+      if (size+1 !== dups.size) {
+          return e;
+      }
+  } 
+  
+  return -1;
+} 
