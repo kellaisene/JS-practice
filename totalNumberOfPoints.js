@@ -13,6 +13,16 @@
 // 0 <= x <= 4
 // 0 <= y <= 4
 
-function points(games) {
-  // your code here
-}
+// Long Answer //
+const points = games =>
+  games.reduce((total, result) => {
+    const [x, y] = result.split(':').map(Number)
+    if (x > y) return total + 3
+    if (x < y) return total
+    return total + 1
+  }, 0)
+
+// Advanced answer //
+const points=games=>games.reduce((output,current)=>{
+  return output += current[0]>current[2] ? 3 : current[0]===current[2] ? 1 : 0;
+},0)
