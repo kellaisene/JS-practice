@@ -6,6 +6,7 @@
 
 // Note: there will always be exactly one wolf in the array.
 
+
 function warnTheSheep(queue) {
     queue = queue.reverse().indexOf('wolf');
     return (queue === 0) ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${queue}! You are about to be eaten by a wolf!`;
