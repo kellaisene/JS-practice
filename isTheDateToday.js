@@ -2,9 +2,9 @@
 
 // Make sure that your function does not return a false positive by just checking just the day.
 
-const isToday(date) {
-    if(date.toDateString() === new Date().toDateString()){
-        return true;
-    }
-    return false;
-}
+const isToday = (date) => {
+	if (date.toDateString() === new Date().toDateString()) {
+		return true;
+	}
+	return false;
+};
