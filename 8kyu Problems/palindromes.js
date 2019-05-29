@@ -97,3 +97,9 @@ function checkPalindrome(inputString) {
 	}
 	return false;
 }
+
+// Make an array
+function checkPalindrome(inputString) {
+	inputString = inputString.toLocaleLowerCase();
+	return Array.from(inputString).toString() === Array.from(inputString).reverse().toString();
+}
