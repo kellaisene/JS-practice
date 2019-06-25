@@ -17,6 +17,7 @@ function howManyLightsabersDoYouOwn(name) {
 	return 18;
 }
 
+// arrow function
 const howManyLightsabersDoYouOwn = (name) => {
 	if (name !== 'Zach') {
 		return 0;
