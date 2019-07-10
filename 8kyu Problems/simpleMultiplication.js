@@ -7,3 +7,9 @@ function simpleMultiplication(number) {
 		return number * 9;
 	}
 }
+
+//Using a turnary and arrow function
+
+const simpleMultiplication = (number) => {
+	return number * (n % 2 ? 9 : 8);
+};
