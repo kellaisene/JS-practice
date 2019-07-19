@@ -15,3 +15,10 @@ function minValue(values) {
 
 	return Number(lowestNums.join(''));
 }
+
+// Shorter way
+
+function minValue(values) {
+	let arr = Array.from(new Set(values));
+	return parseInt(arr.sort().join(''));
+}
