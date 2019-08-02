@@ -86,3 +86,6 @@ function century(year) {
 		return century(year - 100) + 1;
 	}
 }
+
+// Even better way
+const century = (year) => Math.ceil(year / 100);
