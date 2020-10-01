@@ -96,3 +96,23 @@ function isSolved(board) {
     if (/0/.test(board)) return -1;
     return 0;
 }
+
+//OR
+
+function isSolved(board) {
+    var win = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontal
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Vertical
+        [0, 4, 8], [2, 4, 6]           // Diagonal
+    ];
+
+    board = board[0].concat(board[1], board[2]);
+    for (var i = 0, r; i < win.length; i++)
+        if (r = val(win[i], board))
+            return r;
+
+    return ~board.indexOf(0) ? -1 : 0;
+}
+
+// Return the value if all values are the same
+function val(p, b) { return b[p[0]] == b[p[1]] && b[p[0]] == b[p[2]] && b[p[0]]; }
