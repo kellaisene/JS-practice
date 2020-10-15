@@ -15,4 +15,36 @@ The username and password will each be less than 100 characters.
 
 function validate(username, password) {
     //your code here
+    if (username.length > password.length) return validate(password, username);
+    let x = 0;
+    for (let i = 0; i + x < username.length; i++)
+        for (let j = i + 1; j <= username.length; j++)
+            if (password.includes(username.slice(i, j)))
+                x = Math.max(x, j - i);
+    return x * 2 < username.length;
+}
+
+// Best Practice
+
+const validate = (username, password) => {
+    const half = Math.ceil(Math.min(username.length, password.length) / 2);
+    for (let i = 0; i <= password.length - half; i++) {
+        if (username.includes(password.substr(i, half))) return false;
+    }
+    return true;
+};
+
+// OR
+
+function validate(username, password) {
+    var shortest = (username.length < password.length) ? username : password;
+    var sequ = Math.ceil(shortest.length / 2);
+    for (i = 0; i <= (username.length - sequ); i++) {
+        var n = password.indexOf(username.slice(i, i + sequ))
+        if (n > -1) {
+            break;
+        }
+    }
+    var result = (n > -1) ? false : true;
+    return result;
 }
